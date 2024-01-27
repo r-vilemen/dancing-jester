@@ -6,6 +6,8 @@ public class Downy : MonoBehaviour
 {
     public bool downpressed;
     public bool pressed;
+    public Colisao colisao_;
+
     void Start()
     {
 
@@ -14,7 +16,6 @@ public class Downy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(downpressed);
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             downpressed = true;
@@ -23,7 +24,14 @@ public class Downy : MonoBehaviour
 
         if (pressed && downpressed)
         {
-            Debug.Log("Acertou");
+            colisao_.points++;
+            Debug.Log(colisao_.points);
+            Destroy(gameObject);
+        }
+        else if (pressed == false && downpressed)
+        {
+            colisao_.points--;
+            Debug.Log(colisao_.points);
         }
     }
     void OnTriggerEnter2D(Collider2D col)
@@ -32,6 +40,11 @@ public class Downy : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Alvo")) { pressed = false; }
+        if (col.gameObject.CompareTag("Alvo"))
+        {
+            pressed = false;
+            Destroy(gameObject);
+        }
+
     }
 }
