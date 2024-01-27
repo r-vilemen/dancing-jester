@@ -6,7 +6,6 @@ public class Colisao : MonoBehaviour
     public GameObject upArrow;
     public GameObject rightArrow;
     public GameObject downArrow;
-
     bool bpm = true;
     public float lefty = 0;
     public float upy = 0;
