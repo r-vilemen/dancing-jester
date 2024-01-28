@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Upy : MonoBehaviour
 {
-    public bool leftpressed;
-    public bool downpressed;
-    public bool rightpressed;
+    //public bool leftpressed;
+    //public bool downpressed;
+    //public bool rightpressed;
     public bool uppressed;
     public bool pressed;
 
-    public int keydown;
     void Start()
     {
 
@@ -19,38 +18,31 @@ public class Upy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            leftpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            downpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rightpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            uppressed = true;
-            keydown = 1;
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    leftpressed = true;
+        //}
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    downpressed = true;
+        //}
+        if (Input.GetKeyDown(KeyCode.UpArrow)) uppressed = true;
+        if (Input.GetKeyUp(KeyCode.UpArrow)) uppressed = false;
 
-        }
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    uppressed = true;
+
+        //}
         if (pressed && uppressed)
         {
             Pontos.pontuacao++;
             Destroy(gameObject);
-            keydown = 0;
         }
-        else if (!pressed && keydown == 1)
-        {
-            Pontos.pontuacao--;
-            keydown = 0;
-        }
+        //else if (!pressed && keydown == 1)
+        //{
+        //    Pontos.pontuacao--;
+        //}
 
     }
     void OnTriggerEnter2D(Collider2D col)

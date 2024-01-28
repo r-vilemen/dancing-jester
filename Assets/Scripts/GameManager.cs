@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     {
         if(Pontos.pontuacao <= -2)
         {
-            telaDerrota.SetActive(true);
-            Time.timeScale = 0f;
+            //.SetActive(true);
+           // Time.timeScale = 0f;
         }
         
     }

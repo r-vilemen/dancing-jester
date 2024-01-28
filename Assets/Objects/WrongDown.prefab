@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2785683164986237654}
   m_Layer: 0
   m_Name: WrongDown
-  m_TagString: Untagged
+  m_TagString: Quadrado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,11 +180,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2318261756348432726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a21b2cabb7a94442a3c041fd6cd79d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   downpressed: 0
   pressed: 0
-  colisao_: {fileID: 8877482742270652818, guid: 3bf8446fdda774c4995b43fbda511c74, type: 3}
+  colisao_: {fileID: 0}

@@ -107,8 +107,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7620737990240747114}
   - component: {fileID: 9019651936953174570}
+  - component: {fileID: 2467971388498447557}
   - component: {fileID: 8655208568257968082}
-  - component: {fileID: 8877482742270652818}
   - component: {fileID: 8930621585231956427}
   m_Layer: 0
   m_Name: Collider
@@ -188,6 +188,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2467971388498447557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275015385427779713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a881ac3b5f5e7469c236000dfc372f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftpressed: 0
+  downpressed: 0
+  rightpressed: 0
+  uppressed: 0
+  pressed: 0
+  keypressed: 0
+  keydown: 0
+  perderPonto: 0
 --- !u!61 &8655208568257968082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -233,31 +253,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76789737, y: 1.8760592}
   m_EdgeRadius: 0
---- !u!114 &8877482742270652818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275015385427779713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e451255478eca4ba91624b174bc9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  leftArrow: {fileID: 2521272365600303093, guid: eba3609cb1aa4fc4bba5b66eca615f5f, type: 3}
-  upArrow: {fileID: 2386153003534574085, guid: a42eb668c9f69164e938a04e4b3f3339, type: 3}
-  rightArrow: {fileID: 8107392731586473311, guid: 3bbd051f5b31d6643874f0125cd21c42, type: 3}
-  downArrow: {fileID: 4618392175386924389, guid: 48840e432e5d89948b48e3af557bdf1a, type: 3}
-  wrongleftArrow: {fileID: 2318261756348432726, guid: 5ff13f9cf76b2ed4abce566b68bfd32e, type: 3}
-  wrongupArrow: {fileID: 2318261756348432726, guid: 6c679f00692bf3d4f97074f2f5da573c, type: 3}
-  wrongrightArrow: {fileID: 2318261756348432726, guid: 9a9221001dda985468ab86e65047a013, type: 3}
-  wrongdownArrow: {fileID: 2318261756348432726, guid: a12e908805b2997489dcdae40f058df9, type: 3}
-  lefty: 0
-  upy: 0
-  righty: 0
-  downy: 0
 --- !u!50 &8930621585231956427
 Rigidbody2D:
   serializedVersion: 4

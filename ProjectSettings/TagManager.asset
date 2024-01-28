@@ -10,6 +10,11 @@ TagManager:
   - SETABAI
   - SETAACI
   - Deadline
+  - SetaDown
+  - SetaUp
+  - SetaEsq
+  - SetaDir
+  - Quadrado
   layers:
   - Default
   - TransparentFX

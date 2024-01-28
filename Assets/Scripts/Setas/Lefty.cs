@@ -5,12 +5,12 @@ using UnityEngine;
 public class Lefty : MonoBehaviour
 {
     public bool leftpressed;
-    public bool downpressed;
-    public bool rightpressed;
-    public bool uppressed;
+    //public bool downpressed;
+    //public bool rightpressed;
+    //public bool uppressed;
     public bool pressed;
 
-    public int keydown;
+    //public int keydown;
     void Start()
     {
 
@@ -19,33 +19,40 @@ public class Lefty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            leftpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            downpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rightpressed = true;
-            keydown = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            uppressed = true;
-            keydown = 1;
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) leftpressed = true;
+        if (Input.GetKeyUp(KeyCode.LeftArrow)) leftpressed = false;
 
-        }
+        //if (Input.GetKeyDown(KeyCode.DownArrow)) downpressed = true;
+        //if (Input.GetKeyUp(KeyCode.DownArrow)) downpressed = false;
+
+        //if (Input.GetKeyDown(KeyCode.RightArrow)) rightpressed = true;
+        //if (Input.GetKeyUp(KeyCode.RightArrow)) rightpressed = false;
+
+        //if (Input.GetKeyDown(KeyCode.UpArrow)) uppressed = true;
+        //if (Input.GetKeyUp(KeyCode.UpArrow)) uppressed = false;
+
         if (pressed && leftpressed)
         {
             Pontos.pontuacao++;
             Destroy(gameObject);
-            keydown = 0;
         }
+        //if (pressed && rightpressed)
+        //{
+        //    Pontos.pontuacao++;
+        //    Destroy(gameObject);
+        //}
+        //if (pressed && downpressed)
+        //{
+        //    Pontos.pontuacao++;
+        //    Destroy(gameObject);
+        //}
+        //if (pressed && uppressed)
+        //{
+        //    Pontos.pontuacao++;
+        //    Destroy(gameObject);
+        //}
+
+        
         /*else if (!pressed && keydown == 1)
         {
             Pontos.pontuacao--;

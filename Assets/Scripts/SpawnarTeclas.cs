@@ -23,6 +23,7 @@ public class SpawnarTeclas : MonoBehaviour
     void Start()
     {
         StartCoroutine(bpmSpawn());
+
     }
 
     // Update is called once per frame
@@ -75,7 +76,7 @@ public class SpawnarTeclas : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-            spawnNumber = Random.Range(1, 103);
+            spawnNumber = Random.Range(1, 101);
             //Debug.Log(spawnNumber);
         }
 

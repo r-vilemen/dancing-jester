@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 3298817806183068429}
   - component: {fileID: 3463087017578937411}
   - component: {fileID: 5103056641362788150}
-  - component: {fileID: 2539929423730080090}
   m_Layer: 0
   m_Name: UpArrow
-  m_TagString: Untagged
+  m_TagString: SetaUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,18 +162,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2539929423730080090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2386153003534574085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98fe4eaabb5da3d48b17545d0c80d0c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  downpressed: 0
-  pressed: 0
-  colisao_: {fileID: 8877482742270652818, guid: 3bf8446fdda774c4995b43fbda511c74, type: 3}
