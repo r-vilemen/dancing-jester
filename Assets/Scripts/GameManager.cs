@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(terminarfase());
         Time.timeScale = 1f;
         telaDerrota.SetActive(false);
     }
@@ -22,5 +23,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
         }
         
+    }
+    IEnumerator terminarfase()
+    {
+        yield return new WaitForSeconds(60);
+        telaVitoria.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

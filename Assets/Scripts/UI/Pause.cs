@@ -60,7 +60,7 @@ public class Pause : MonoBehaviour
     }
     public void LoadRestartFase3()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
         Time.timeScale = 1f;
     }
 }
