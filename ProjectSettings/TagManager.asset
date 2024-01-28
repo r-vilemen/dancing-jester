@@ -15,6 +15,9 @@ TagManager:
   - SetaEsq
   - SetaDir
   - Quadrado
+  - Undefined
+  - payaso
+  - tomato
   layers:
   - Default
   - TransparentFX
