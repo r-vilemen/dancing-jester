@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class Colision : MonoBehaviour
@@ -9,6 +7,8 @@ public class Colision : MonoBehaviour
     public bool downpressed;
     public bool rightpressed;
     public bool uppressed;
+    public Tomato_spawner Tomato_spawner;
+    public float numero;
 
     [SerializeField] private GameObject reference;
 
@@ -48,11 +48,11 @@ public class Colision : MonoBehaviour
 
     }
     void AddPoints(int points) => Pontos.pontuacao += points; //{ } equivale => se for uma linha
-    void VerifyObject() 
+    void VerifyObject()
     {
         if (reference == null) AddPoints(-1);
 
-        if(leftpressed && reference.tag == "SetaEsq")
+        if (leftpressed && reference.tag == "SetaEsq")
         {
             AddPoints(1);
         }
@@ -70,16 +70,23 @@ public class Colision : MonoBehaviour
         }
         else if (reference.tag == "Quadrado")
         {
+            Tomato_spawner.Tom = true;
             AddPoints(-1); //adicionar numero negativo e como se fosse subtracao
+            InvokeRepeating("DestroyItem_", numero, 0f);
         }
         DestroyItem();
     }
-    void DestroyItem() {
+    void DestroyItem()
+    {
         if (reference == null) return;
         Destroy(reference.gameObject);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
         reference = col.gameObject;
+    }
+    void DestroyItem_()
+    {
+        Tomato_spawner.Tom = false;
     }
 }
