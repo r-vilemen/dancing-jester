@@ -10,101 +10,76 @@ public class Colision : MonoBehaviour
     public bool rightpressed;
     public bool uppressed;
 
-    private GameObject reference;
+    [SerializeField] private GameObject reference;
 
-    public bool isDentro;
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             leftpressed = true;
-            if (!isDentro) Pontos.pontuacao--;
+            VerifyObject();
+            return;
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow)) leftpressed = false;
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             downpressed = true;
-            if (!isDentro) Pontos.pontuacao--;
-
+            VerifyObject();
+            return;
         }
         if (Input.GetKeyUp(KeyCode.DownArrow)) downpressed = false;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             rightpressed = true;
-            if (!isDentro) Pontos.pontuacao--;
+            VerifyObject();
+            return;
         }
         if (Input.GetKeyUp(KeyCode.RightArrow)) rightpressed = false;
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             uppressed = true;
-            if (!isDentro) Pontos.pontuacao--;
+            VerifyObject();
+            return;
         }
         if (Input.GetKeyUp(KeyCode.UpArrow)) uppressed = false;
 
-        if (isDentro && leftpressed)
-        {
-            Pontos.pontuacao++;
-            Destroy(reference.gameObject);
-            isDentro = false;
-        }
-        if (isDentro && downpressed)
-        {
-            Pontos.pontuacao++;
-            Destroy(reference.gameObject);
-            isDentro = false;
-        }
-        if (isDentro && uppressed)
-        {
-            Pontos.pontuacao++;
-            Destroy(reference.gameObject);
-            isDentro = false;
-        }
-        if (isDentro && downpressed)
-        {
-            Pontos.pontuacao++;
-            Destroy(reference.gameObject);
-            isDentro = false;
-        }
+    }
+    void AddPoints(int points) => Pontos.pontuacao += points; //{ } equivale => se for uma linha
+    void VerifyObject() 
+    {
+        if (reference == null) AddPoints(-1);
 
+        if(leftpressed && reference.tag == "SetaEsq")
+        {
+            AddPoints(1);
+        }
+        else if (rightpressed && reference.tag == "SetaDir")
+        {
+            AddPoints(1);
+        }
+        else if (uppressed && reference.tag == "SetaUp")
+        {
+            AddPoints(1);
+        }
+        else if (downpressed && reference.tag == "SetaDown")
+        {
+            AddPoints(1);
+        }
+        else if (reference.tag == "Quadrado")
+        {
+            AddPoints(-1); //adicionar numero negativo e como se fosse subtracao
+        }
+        DestroyItem();
+    }
+    void DestroyItem() {
+        if (reference == null) return;
+        Destroy(reference.gameObject);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("SetaEsq"))
-        {
-            isDentro = true;
-            reference = col.gameObject;
-        }
-        else if (col.gameObject.CompareTag("SetaUp") && uppressed)
-        {
-            isDentro = true;
-            reference = col.gameObject;
-        }
-        else if (col.gameObject.CompareTag("SetaDown") && downpressed)
-        {
-            isDentro = true;
-            reference = col.gameObject;
-        }
-        else if (col.gameObject.CompareTag("SetaDir") && rightpressed)
-        {
-            isDentro = true;
-            reference = col.gameObject;
-        }
-
-
-    }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        Destroy(col.gameObject, .5f);
-        isDentro = false;
-        if (!col.gameObject.CompareTag("Quadrado")) { Pontos.pontuacao--; }
+        reference = col.gameObject;
     }
 }
