@@ -3,21 +3,49 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    public GameObject ImagemFeliz;
+    public GameObject ImagemNormal;
+    public GameObject ImagemLaranja;
+    public GameObject ImagemVermelha;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        ImagemNormal.SetActive(true);
     }
 
     void Update()
     {
+
        //Debug.Log(colisao_.points);
         if (Pontos.pontuacao > 5)
         {
-            MudarCor(Color.green);
+            ImagemFeliz.SetActive(true);
+            ImagemNormal.SetActive(false);
+            ImagemLaranja.SetActive(false);
+            ImagemVermelha.SetActive(false);
+
         }
-        else if (Pontos.pontuacao < 5)
+        else if(Pontos.pontuacao == 5)
         {
-            MudarCor(Color.red);
+            ImagemNormal.SetActive(true);
+            ImagemFeliz.SetActive(false);
+            ImagemLaranja.SetActive(false);
+            ImagemVermelha.SetActive(false);
+        }
+        else if (Pontos.pontuacao < 5 && Pontos.pontuacao > 1)
+        {
+            ImagemNormal.SetActive(false);
+            ImagemFeliz.SetActive(false);
+            ImagemLaranja.SetActive(true);
+            ImagemVermelha.SetActive(false);
+        }
+        else if (Pontos.pontuacao <= 1)
+        {
+            ImagemNormal.SetActive(false);
+            ImagemFeliz.SetActive(false);
+            ImagemLaranja.SetActive(false);
+            ImagemVermelha.SetActive(true);
         }
     }
 

@@ -48,8 +48,19 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-    public void LoadRestart()
+    public void LoadRestartFase1()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1f;
+    }
+    public void LoadRestartFase2()
+    {
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1f;
+    }
+    public void LoadRestartFase3()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1f;
     }
 }

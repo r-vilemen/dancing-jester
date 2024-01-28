@@ -18,6 +18,7 @@ public class SpawnarTeclas : MonoBehaviour
     public GameObject wrongrightArrow;
     public GameObject wrongdownArrow;
 
+    public float bpms;
     public int spawnNumber;
     // Start is called before the first frame update
     void Start()
@@ -75,7 +76,7 @@ public class SpawnarTeclas : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(bpms);
             spawnNumber = Random.Range(1, 103);
             //Debug.Log(spawnNumber);
         }
