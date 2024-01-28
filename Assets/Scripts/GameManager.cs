@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         telaDerrota.SetActive(false);
     }
 
@@ -17,8 +18,8 @@ public class GameManager : MonoBehaviour
     {
         if(Pontos.pontuacao <= -2)
         {
-            //.SetActive(true);
-           // Time.timeScale = 0f;
+            telaDerrota.SetActive(true);
+            Time.timeScale = 0f;
         }
         
     }

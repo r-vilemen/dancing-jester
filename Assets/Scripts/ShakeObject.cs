@@ -30,6 +30,7 @@ public class ShakeObject : MonoBehaviour
         {
             Begin();
         }
+        else if(Pontos.pontuacao <= -2) StopAllCoroutines();
     }
 
     private void OnValidate()
