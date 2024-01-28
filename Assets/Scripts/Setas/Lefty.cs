@@ -46,11 +46,11 @@ public class Lefty : MonoBehaviour
             Destroy(gameObject);
             keydown = 0;
         }
-        else if (!pressed && keydown == 1)
+        /*else if (!pressed && keydown == 1)
         {
             Pontos.pontuacao--;
             keydown = 0;
-        }
+        }*/
 
     }
     void OnTriggerEnter2D(Collider2D col)
