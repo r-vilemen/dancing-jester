@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Upy : MonoBehaviour
 {
+    public bool leftpressed;
     public bool downpressed;
+    public bool rightpressed;
+    public bool uppressed;
     public bool pressed;
-    public Colisao colisao_;
+
+    public int keydown;
     void Start()
     {
 
@@ -15,20 +19,37 @@ public class Upy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            leftpressed = true;
+            keydown = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             downpressed = true;
+            keydown = 1;
         }
-        else { downpressed = false; }
-        if (pressed && downpressed)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            rightpressed = true;
+            keydown = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            uppressed = true;
+            keydown = 1;
+
+        }
+        if (pressed && leftpressed)
         {
             Pontos.pontuacao++;
             Destroy(gameObject);
+            keydown = 0;
         }
-        else if (!pressed && downpressed)
+        else if (!pressed && keydown == 1)
         {
             Pontos.pontuacao--;
-            Destroy(gameObject);
+            keydown = 0;
         }
 
     }

@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-       // Debug.Log(colisao_.points);
+       //Debug.Log(colisao_.points);
         if (Pontos.pontuacao > 5)
         {
             MudarCor(Color.green);

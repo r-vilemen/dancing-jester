@@ -3,7 +3,6 @@ using UnityEngine;
 public class Pontos : MonoBehaviour
 {
     public static int pontuacao;
-    public GameObject barraPont;
     // Start is called before the first frame update
     void Start()
     {
