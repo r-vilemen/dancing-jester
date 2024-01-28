@@ -14,9 +14,9 @@ public class Pontos : MonoBehaviour
     void Update()
     {
         Debug.Log(pontuacao);
-        if(pontuacao < 0)
+        if(pontuacao < -2)
         {
-            pontuacao = 0;
+            pontuacao = -2;
         }
         else if(pontuacao > 10)
         {

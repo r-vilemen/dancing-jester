@@ -57,6 +57,7 @@ public class Lefty : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Alvo")) { pressed = true; }
         if (col.gameObject.CompareTag("Deadline")){
+            Pontos.pontuacao--;
             Destroy(gameObject);
         }
     }

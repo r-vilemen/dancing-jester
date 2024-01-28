@@ -40,7 +40,7 @@ public class Righty : MonoBehaviour
             keydown = 1;
 
         }
-        if (pressed && leftpressed)
+        if (pressed && rightpressed)
         {
             Pontos.pontuacao++;
             Destroy(gameObject);
@@ -58,6 +58,7 @@ public class Righty : MonoBehaviour
         if (col.gameObject.CompareTag("Alvo")) { pressed = true; }
         if (col.gameObject.CompareTag("Deadline"))
         {
+            Pontos.pontuacao--;
             Destroy(gameObject);
         }
     }

@@ -40,7 +40,7 @@ public class Downy : MonoBehaviour
             keydown = 1;
 
         }
-        if (pressed && leftpressed)
+        if (pressed && downpressed)
         {
             Pontos.pontuacao++;
             Destroy(gameObject);
@@ -58,6 +58,7 @@ public class Downy : MonoBehaviour
         if (col.gameObject.CompareTag("Alvo")) { pressed = true; }
         if (col.gameObject.CompareTag("Deadline"))
         {
+            Pontos.pontuacao--;
             Destroy(gameObject);
         }
     }

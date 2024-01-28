@@ -3,8 +3,6 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
-    public Colisao colisao_;
-
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,4 +26,6 @@ public class Score : MonoBehaviour
         // Atribui a nova cor ao SpriteRenderer
         spriteRenderer.color = novaCor;
     }
+    
+
 }
