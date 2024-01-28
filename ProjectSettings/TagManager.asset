@@ -9,6 +9,7 @@ TagManager:
   - SETADIR
   - SETABAI
   - SETAACI
+  - Deadline
   layers:
   - Default
   - TransparentFX

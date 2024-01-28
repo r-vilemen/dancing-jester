@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e451255478eca4ba91624b174bc9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: -27
+  points: 0
   leftArrow: {fileID: 2521272365600303093, guid: eba3609cb1aa4fc4bba5b66eca615f5f, type: 3}
   upArrow: {fileID: 2386153003534574085, guid: a42eb668c9f69164e938a04e4b3f3339, type: 3}
   rightArrow: {fileID: 8107392731586473311, guid: 3bbd051f5b31d6643874f0125cd21c42, type: 3}

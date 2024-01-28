@@ -24,27 +24,26 @@ public class Downy : MonoBehaviour
 
         if (pressed && downpressed)
         {
-            colisao_.points++;
-            Debug.Log(colisao_.points);
+            Pontos.pontuacao++;
             Destroy(gameObject);
         }
-        else if (pressed == false && downpressed)
+        else if (!pressed && downpressed)
         {
-            colisao_.points--;
-            Debug.Log(colisao_.points);
+            Pontos.pontuacao--;
+            Destroy(gameObject);
         }
+
     }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Alvo")) { pressed = true; }
+        if (col.gameObject.CompareTag("Deadline"))
+        {
+            Destroy(gameObject);
+        }
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Alvo"))
-        {
-            pressed = false;
-            Destroy(gameObject);
-        }
-
+        if (col.gameObject.CompareTag("Alvo")) { pressed = false; }
     }
 }
