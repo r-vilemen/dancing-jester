@@ -76,7 +76,7 @@ public class SpawnarTeclas : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-            spawnNumber = Random.Range(1, 101);
+            spawnNumber = Random.Range(1, 103);
             //Debug.Log(spawnNumber);
         }
 
