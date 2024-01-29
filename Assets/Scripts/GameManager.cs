@@ -17,16 +17,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Pontos.pontuacao <= -2)
+        if (Pontos.pontuacao <= -2)
         {
             telaDerrota.SetActive(true);
             Time.timeScale = 0f;
         }
-        
+
     }
     IEnumerator terminarfase()
     {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(25);
         telaVitoria.SetActive(true);
         Time.timeScale = 0f;
     }
